@@ -1,0 +1,12 @@
+
+<div class="div">
+<h2>Contacte</h2>
+<ul class="contacte">
+  <li *ngFor="let contact of contacte"
+    [class.selected]="contact === selectedContact"
+    (click)="onSelect(contact)">
+    <span><i class="fas fa-address-book icon"></i></span> {{contact.nume}} {{contact.prenume}}
+  </li>
+</ul>
+<app-detalii-contacte [contact]="selectedContact"></app-detalii-contacte>
+<div>

@@ -1,0 +1,19 @@
+h1 {
+	position: relative;
+	text-align: center;
+	font-family: 'Fira Sans', sans-serif;
+	font-weight: 800;
+	font-size: 35px;
+	color: rgb(41, 146, 216);
+	margin-top: 25px;
+	margin-bottom: 45px;
+}
+
+a {
+	text-decoration: none;
+}
+
+.buton {
+	padding: 6px;
+	margin: 7px;
+}

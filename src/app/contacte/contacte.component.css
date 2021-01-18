@@ -1,0 +1,68 @@
+ul {
+	list-style: none;
+}
+
+li {
+	font-family: 'Fira Sans', sans-serif;
+	font-size: 23px;
+	margin-left: 23px;
+}
+h2 {
+	font-family: 'Fira Sans', sans-serif;
+	font-size: 23px;
+	margin: 25px;
+	border: 1px solid black;
+	border-radius: 6px;
+	width: 100px;
+	height: 30px;
+	background-color: rgb(13, 125, 201);
+	color: white;
+	cursor: context-menu;
+}
+.div {
+	display: flex;
+	max-width: 300px;
+}
+.selectat {
+	display: flex;
+	flex-direction: column;
+}
+.buton {
+	margin: 30px 30px 25px 20px;
+	font-family: 'Fira Sans', sans-serif;
+}
+
+.icon {
+	font-size: 25px;
+}
+
+.contacte {
+	margin: 1.3em;
+	list-style-type: none;
+	padding: 0;
+	width: 15em;
+}
+.contacte li {
+	cursor: pointer;
+	position: relative;
+	left: 0;
+	background-color: #eee;
+	margin: .5em;
+	padding: .3em 0;
+	height: 1.8em;
+	width: 10em;
+	border-radius: 4px;
+}
+.contacte li:hover {
+	color: #2cb4f8;
+	background-color: #ddd;
+	left: .1em;
+}
+.contacte li.selected {
+	background-color: #ffffff;
+	color: #2cb4f8;
+}
+.contacte li.selected:hover {
+	background-color: #c9f9ff;
+	color: rgb(0, 0, 0);
+}
