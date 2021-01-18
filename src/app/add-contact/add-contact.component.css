@@ -1,0 +1,13 @@
+label {
+	font-family: monospace;
+	font-size: 25px;
+	margin-bottom: 6px;
+}
+
+input {
+	border: 2px solid rgb(41, 146, 216);
+}
+
+input.ng-invalid {
+	border: 2px solid red;
+}

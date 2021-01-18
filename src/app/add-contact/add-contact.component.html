@@ -1,1 +1,29 @@
-<p>add-contact works!</p>
+<div class="jumbotron">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <form name="form" (ngSubmit)="onCreateContact(f.value)" #f="ngForm">
+        <div id="user-data">
+          <div class="form-group">
+            <label for="nume">Nume:</label>
+            <input type="text" name="nume" id="nume" ngModel class="form-control" placeholder="ex: Popescu" required maxlength="15" #nume="ngModel">
+            <span *ngIf="!nume.valid && nume.touched">Numele este ebligatoriu!</span>
+          </div>
+          <div class="form-group">
+            <label for="prenume">Prenume:</label>
+            <input type="text" name="prenume" id="prenume" ngModel class="form-control" placeholder="ex: Marius" maxlength="15">
+          </div>
+          <div class="form-group">
+            <label for="tel">Numar de telefon:</label>
+            <input type="tel" name="tel" id="tel" ngModel class="form-control" required maxlength="15" value="07" #tel="ngModel">
+            <span *ngIf="!tel.valid && tel.touched">Numarul de telefon este obligatoriu si in format 07xxxxxxxx!</span>
+          </div>
+          <div class="form-group">
+            <label for="adresa">Adresa:</label>
+            <input type="text" name="adresa" id="adresa" ngModel class="form-control" placeholder="ex: Piata Victoriei">
+          </div>
+        </div>
+        <button [disabled]="!f.valid" class="btn btn-primary" type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>
