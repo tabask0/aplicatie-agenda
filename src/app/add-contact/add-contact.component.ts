@@ -32,5 +32,6 @@ export class AddContactComponent implements OnInit {
       .subscribe((responseData) => {
         console.log(responseData);
       });
+    alert('Contact adaugat!');
   }
 }

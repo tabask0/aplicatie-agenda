@@ -1,8 +1,6 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Contact } from '../contact';
-import { CONTACTS } from '../lista-contacte';
-import { map } from 'rxjs/operators';
+import { ContacteService } from '../services/contacte.service';
 
 @Component({
   selector: 'app-contacte',
@@ -10,25 +8,21 @@ import { map } from 'rxjs/operators';
   styleUrls: ['./contacte.component.css'],
 })
 export class ContacteComponent implements OnInit {
-  contacte = CONTACTS;
+  contacte: Contact[] = [];
   selectedContact: Contact | undefined;
-  constructor(private http: HttpClient) {}
+  constructor(private contacteService: ContacteService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.getContacte();
+  }
 
   getContacte() {
-    this.http
-      .get(
-        'https://agenda-2b43f-default-rtdb.europe-west1.firebasedatabase.app/contacte.json'
-      )
-      .pipe(
-        map((responseData) => {
-          const contacteArray: Contact[] = [];
-        })
-      )
-      .subscribe((contacte) => {
-        console.log(contacte);
+    this.contacteService.getContacte().subscribe((response: any) => {
+      const contactIds = Object.keys(response);
+      contactIds.forEach((c) => {
+        this.contacte.push(response[c]);
       });
+    });
   }
 
   onSelect(contact: Contact): void {
